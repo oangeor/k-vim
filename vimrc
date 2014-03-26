@@ -56,7 +56,7 @@ set cursorline              " 突出显示当前行
 set t_ti= t_te=
 
 "- 则点击光标不会换,用于复制
-set mouse-=a           " 鼠标暂不启用, 键盘党....
+set mouse=a           " 鼠标暂不启用, 键盘党....
 " 修复ctrl+m 多光标操作选择的bug，但是改变了ctrl+v进行字符选中时将包含光标下的字符
 "set selection=exclusive
 set selection=inclusive
@@ -257,11 +257,6 @@ let g:mapleader = ','
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-"强迫自己用 hjkl
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
 
 "Treat long lines as break lines (useful when moving around in them)
 "se swap之后，同物理行上线直接跳
@@ -336,8 +331,8 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
 "Use arrow key to change buffer"
-noremap <left> :bp<CR>
-noremap <right> :bn<CR>
+"noremap <left> :bp<CR>
+"noremap <right> :bn<CR>
 
 ""Jump to start and end of line using the home row keys
 ""
@@ -529,6 +524,9 @@ let g:indentLine_noConcealCursor = 1
 let g:indentLine_color_term = 0
 let g:indentLine_char = '¦'
 
+"CoffeeScript support for vim
+Bundle 'kchmck/vim-coffee-script'
+
 "for show no user whitespaces
 Bundle 'bronson/vim-trailing-whitespace'
 map <leader><space> :FixWhitespace<cr>
@@ -693,6 +691,7 @@ endif
 
 " 修改主题和颜色展示
 colorscheme solarized
+let g:solarized_termtrans = 1
 set background=dark
 set t_Co=256
 
